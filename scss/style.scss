@@ -1,0 +1,509 @@
+//файл обнуляющих стилей
+@import "nullstyle.scss";
+
+//шрифты
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+//----------------------------------------------------------------------------
+//переменные для блока
+//цвета
+$light-brown: #555248;
+$dark-brown: #1B1A17;
+$brown: #444240;
+$light-grey: #C4C0B6;
+$light-pink: #D4B098;
+$lighter-brown: #59505C;
+//размеры
+$page-header-height: 85px;
+$presentation-height: 770px;
+$popular-goods-height: 720px;
+$gallery-height: 519px;
+$subs-height: 631px;
+$page-footer-height: 275px;
+
+//шаблоны
+@mixin pseudo-line ($line-width) {
+  padding-left: $line-width;
+  content: "";
+  font-size: 30%;
+  border-top: 1px solid #8B8371;
+}
+
+//----------------------------------------------------------------------------
+body {}
+
+.page-body {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.page-header {
+  background-color: white;
+  height: $page-header-height;
+  position: fixed;
+  max-width: 1366px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  &__header-box {
+    padding: 35px 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {}
+
+  &__menu-text {}
+
+  &__menu-icon {}
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__svg {}
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.14em;
+    margin-left: -0.3em;
+    color: $light-brown;
+  }
+
+  &__name {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: white;
+  }
+}
+
+.menu-text {
+  width: 422px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {}
+
+  &__link {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: $light-brown;
+  }
+}
+
+.menu-icon {
+  width: 99px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__link {
+    font-size: 0;
+  }
+
+  &__svg path {}
+
+  &__counter {
+    position: absolute;
+    display: inline-block;
+    font-family: Roboto, sans-serif;
+    font-size: 8px;
+    line-height: 9px;
+    text-align: center;
+    color: $dark-brown;
+    background-color: #E6C8B4;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em 0;
+    margin-top: -25%;
+    margin-left: 75%;
+  }
+}
+
+.presentation {
+  height: $presentation-height;
+  padding-left: 180px;
+  padding-right: 114px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+
+  &__catalog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    color: $dark-brown;
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    line-height: 60px;
+    white-space: nowrap;
+    margin-left: -65px;
+
+    &::before {
+      @include pseudo-line(50px);
+      margin-right: 15px;
+    }
+  }
+
+  &__subtitle {
+    color: $dark-brown;
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 0.4em;
+  }
+
+  &__text {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color: $light-brown;
+    opacity: 0.82;
+    margin-top: 2em;
+    margin-bottom: 4em;
+  }
+
+  &__form {}
+
+  &__btn {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background-color: $brown;
+    color: white;
+    padding: 27px 38px;
+  }
+
+  &__main-product {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__prise-box {
+    display: flex;
+    align-items: center;
+    padding-top: 20%;
+    margin-right: -65px;
+
+    &::after {
+      @include pseudo-line(50px);
+      margin-left: 15px;
+    }
+  }
+
+  &__prise {
+    display: inline;
+    font-family: Prata, serif;
+    font-size: 16px;
+    line-height: 22px;
+    white-space: nowrap;
+    color: $dark-brown;
+    margin-right: 5px;
+  }
+
+  &__svg {}
+
+  &__background {
+    position: absolute;
+    width: 496px;
+    height: 944px;
+    border-radius: 100% 0 0 100% / 70% 0 0 70%;
+    background: #EAE3D4;
+    z-index: -1;
+    margin-top: -$page-header-height;
+    left: 35%;
+  }
+
+  &__image {
+    max-width: 502px;
+    margin: -3% 0;
+  }
+
+  &__feature {
+    font-family: Prata, serif;
+    font-size: 16px;
+    line-height: 22px;
+    white-space: nowrap;
+    color: $dark-brown;
+    padding-top: 95%;
+    margin-left: -100px;
+
+    &::before {
+      @include pseudo-line(50px);
+      margin-right: 15px;
+    }
+  }
+}
+
+.popular-goods {
+  height: $popular-goods-height;
+  padding: 80px 100px 0;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    line-height: 43px;
+    color: $dark-brown;
+  }
+
+  &__link {
+    text-align: right;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: $brown;
+    text-decoration: underline $light-grey;
+    text-underline-offset: 0.8em;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+  }
+
+  &__product {}
+}
+
+.product {
+  max-width: 370px;
+  padding: 40px 30px 40px 40px;
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: $dark-brown;
+    opacity: 0.82;
+  }
+
+  &__prise {
+    font-family: Prata, serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: $dark-brown;
+    opacity: 0.82;
+  }
+
+  &__image {
+    max-width: 313px;
+  }
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    line-height: 21px;
+    color: $dark-brown;
+    margin-left: -48px;
+
+    &::before {
+      @include pseudo-line(30px);
+      margin-right: 18px;
+    }
+  }
+}
+
+.gallery {
+  height: $gallery-height;
+  padding-left: 177px;
+  padding-right: 222px;
+  display: flex;
+  justify-content: space-between;
+
+  &__album {}
+
+  &__background {
+    position: absolute;
+    width: 468px;
+    height: $gallery-height;
+    background: #F7F5EF;
+    z-index: -1;
+    margin-left: -177px;
+  }
+
+  &__desc {}
+
+  &__form {
+    padding-top: 45px;
+  }
+
+  &__btn {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: white;
+    background-color: $light-pink;
+    padding: 27px 38px;
+  }
+}
+
+.album {
+  padding-top: 52px;
+
+  &__image {
+    max-width: 521px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: end;
+    padding-top: 22px;
+    padding-right: 60px;
+  }
+
+  &__btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 63px;
+  }
+
+  &__image-number {
+    font-family: Prata, serif;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.desc {
+  padding-top: 140px;
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    line-height: 43px;
+    color: $dark-brown;
+    margin-bottom: 1.1em;
+    white-space: nowrap;
+  }
+
+  &__text {
+    max-width: 376px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: $brown;
+  }
+}
+
+.subs {
+  height: $subs-height;
+  padding: 102px 100px 0;
+  display: flex;
+  justify-content: space-between;
+
+  &__menu-icon {
+    padding-top: 119px;
+    color: $lighter-brown;
+  }
+}
+
+.image-box {
+  display: flex;
+
+  &__image {
+    max-height: 460px;
+    margin-left: 10px;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    max-width: 242px;
+    margin-bottom: 10px;
+  }
+}
+
+.page-footer {
+  height: $page-footer-height;
+  padding: 79px 185px 0;
+  display: flex;
+  justify-content: space-between;
+  background: $brown;
+
+  &__item {
+    align-self: baseline;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__list {
+    padding-top: 18px;
+  }
+
+  &__list-item {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    color: white;
+    opacity: 0.75;
+    padding-top: 15px;
+  }
+
+  &__title {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  &__link {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    color: white;
+    opacity: 0.75;
+  }
+}
